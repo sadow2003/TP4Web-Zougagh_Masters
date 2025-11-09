@@ -56,7 +56,7 @@ public class RagService {
 
         // --- 1. Configuration des Clés et Modèles ---
         String geminiApiKey = System.getenv("TP2_ZougaghMounsif");
-        String tavilyApiKey = System.getenv("TAVILY_API_KEY");
+        String tavilyApiKey = System.getenv("TP4-Masters");
 
         if (geminiApiKey == null || tavilyApiKey == null) {
             System.err.println("ERREUR: Clés API (Gemini ou Tavily) non définies !");

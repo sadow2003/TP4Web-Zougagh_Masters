@@ -8,12 +8,16 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.model.SelectItem;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import ma.emsi.zougagh.TP4Web_ZougaghMasters.Models.Assistant; // Votre Assistant.java
 import ma.emsi.zougagh.TP4Web_ZougaghMasters.services.RagService;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+ // <-- AJOUTEZ CET IMPORT
+
+@Named("bb")
 
 @SessionScoped
 public class Bb implements Serializable {
@@ -53,7 +57,7 @@ public class Bb implements Serializable {
                 .chatModel(ragService.getAnswerModel())
                 .retrievalAugmentor(ragService.getRetrievalAugmentor())
                 .chatMemory(this.chatMemory)
-                .systemMessageProvider(this.roleSysteme)
+                .systemMessageProvider(variables -> this.roleSysteme)
                 .build();
     }
 
